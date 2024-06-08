@@ -8,7 +8,11 @@ import android.content.Context
  */
 object ContextConfig {
 	
-	var application: Application? = null
+	private var application: Application? = null
+	
+	fun init(application: Application) {
+		this.application = application
+	}
 	
 	/**
 	 * global context

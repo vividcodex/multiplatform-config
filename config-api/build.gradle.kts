@@ -121,13 +121,13 @@ mavenPublishing {
 	publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
 	signAllPublications()
 	
-	coordinates("cn.vividcode.multiplatform", "route-api", configVersion)
+	coordinates("cn.vividcode.multiplatform", "config-api", configVersion)
 	
 	pom {
 		name.set("route-api")
-		description.set("这是一个 Kotlin Multiplatform 的页面路由框架")
+		description.set("这是一个 Kotlin Multiplatform 的持久化配置框架")
 		inceptionYear.set("2024")
-		url.set("https://github.com/vividcodex/multiplatform-route")
+		url.set("https://github.com/vividcodex/multiplatform-config")
 		licenses {
 			license {
 				name.set("The Apache License, Version 2.0")
@@ -139,14 +139,14 @@ mavenPublishing {
 			developer {
 				id.set("li-jia-wei")
 				name.set("li-jia-wei")
-				url.set("https://github.com/vividcodex/multiplatform-route")
+				url.set("https://github.com/vividcodex/multiplatform-config")
 			}
 		}
 		
 		scm {
-			url.set("https://github.com/vividcodex/multiplatform-route")
-			connection.set("scm:git:git://github.com/vividcodex/multiplatform-route.git")
-			developerConnection.set("scm:git:ssh://git@github.com:vividcodex/multiplatform-route.git")
+			url.set("https://github.com/vividcodex/multiplatform-config")
+			connection.set("scm:git:git://github.com/vividcodex/multiplatform-config.git")
+			developerConnection.set("scm:git:ssh://git@github.com:vividcodex/multiplatform-config.git")
 		}
 	}
 }

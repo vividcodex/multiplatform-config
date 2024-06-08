@@ -15,8 +15,9 @@ class DesktopConfigProperty<T : Comparable<*>>(
 	private companion object {
 		
 		private val configFile by lazy {
-			val parent = System.getProperty("user.home") + "/Documents/${Config.appName}Files/Config"
-			File(parent, Config.name + ".xml")
+			val appName = if (Config.appName.isNotBlank()) Config.appName else error("appName 为空")
+			val parent = System.getProperty("user.home") + "/Documents/${appName}Files/Config"
+			File(parent, Config.configFileName + ".xml")
 		}
 		
 		private val properties by lazy {

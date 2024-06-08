@@ -4,7 +4,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import cn.vividcode.multiplatform.config.api.Config
 import cn.vividcode.multiplatform.config.api.config
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -12,8 +11,8 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 @Composable
 @Preview
 fun App() {
-	LaunchedEffect(Unit) {
-		Config.appName = "ConfigSample"
+	config {
+		this.appName = "ConfigSample"
 	}
 	MaterialTheme {
 		val coroutineScope = rememberCoroutineScope()

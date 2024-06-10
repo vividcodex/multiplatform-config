@@ -23,8 +23,6 @@ version = configVersion
 kotlin {
 	jvmToolchain(21)
 	
-	isUseK2()
-	
 	@OptIn(ExperimentalWasmDsl::class)
 	wasmJs {
 		moduleName = "configApi"

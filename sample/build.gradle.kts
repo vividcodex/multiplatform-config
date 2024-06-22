@@ -12,6 +12,8 @@ plugins {
 	alias(libs.plugins.compose.compiler)
 }
 
+val configVersion = property("vividcode.config.version")!!.toString()
+
 kotlin {
 	@OptIn(ExperimentalWasmDsl::class)
 	wasmJs {
@@ -92,7 +94,7 @@ android {
 		minSdk = libs.versions.android.minSdk.get().toInt()
 		targetSdk = libs.versions.android.targetSdk.get().toInt()
 		versionCode = 1
-		versionName = "1.0.0"
+		versionName = configVersion
 	}
 	packaging {
 		resources {
@@ -123,7 +125,7 @@ compose.desktop {
 		nativeDistributions {
 			targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
 			packageName = "cn.vividcode.multiplatform.config.sample"
-			packageVersion = "1.0.0"
+			packageVersion = configVersion
 		}
 	}
 }

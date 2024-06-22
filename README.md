@@ -2,7 +2,7 @@
 
 ## 仓库版本
 
-cn.vividcode.multiplatform:config-api:1.0.0
+cn.vividcode.multiplatform:config-api:1.0.1
 
 ## 支持数据类型
 

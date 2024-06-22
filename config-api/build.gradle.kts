@@ -14,7 +14,7 @@ plugins {
 	alias(libs.plugins.maven.publish)
 }
 
-val configVersion = property("config.version")!!.toString()
+val configVersion = property("vividcode.config.version")!!.toString()
 
 group = "cn.vividcode.multiplatform.route.api"
 version = configVersion
@@ -44,22 +44,25 @@ kotlin {
 			jvmTarget.set(JvmTarget.JVM_21)
 		}
 	}
+	
 	jvm("desktop") {
 		@OptIn(ExperimentalKotlinGradlePluginApi::class)
 		compilerOptions {
 			jvmTarget.set(JvmTarget.JVM_21)
 		}
 	}
+	
 	listOf(
 		iosX64(),
 		iosArm64(),
 		iosSimulatorArm64()
 	).forEach { iosTarget ->
 		iosTarget.binaries.framework {
-			baseName = "VividCodeRouteApi"
+			baseName = "ConfigApi"
 			isStatic = true
 		}
 	}
+	
 	sourceSets {
 		androidMain.dependencies {
 			implementation(libs.activity.compose)

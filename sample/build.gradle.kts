@@ -61,7 +61,7 @@ kotlin {
 		
 		androidMain.dependencies {
 			implementation(compose.preview)
-			implementation(libs.activity.compose)
+			implementation(libs.androidx.activity.compose)
 		}
 		commonMain.dependencies {
 			implementation(compose.runtime)

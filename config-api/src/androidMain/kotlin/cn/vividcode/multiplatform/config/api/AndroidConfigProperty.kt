@@ -15,7 +15,7 @@ class AndroidConfigProperty<T : Comparable<*>>(
 
 		private val sharedPreferences by lazy {
 			ContextConfig.globalContext
-				.getSharedPreferences(Config.configFileName, Context.MODE_PRIVATE)
+				.getSharedPreferences(Configure.configFileName, Context.MODE_PRIVATE)
 		}
 	}
 

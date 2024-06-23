@@ -1,14 +1,14 @@
 package cn.vividcode.multiplatform.config.api.expends
 
-import cn.vividcode.multiplatform.config.api.Config
+import cn.vividcode.multiplatform.config.api.Configure
 import korlibs.crypto.AES
 import korlibs.crypto.CipherPadding
 import korlibs.crypto.encoding.base64
 import korlibs.crypto.encoding.fromBase64
 
-private val aesKey by lazy { Config.aesKey.encodeToByteArray() }
+private val aesKey by lazy { Configure.aesKey.encodeToByteArray() }
 
-private val aesIv by lazy { Config.aesIv.encodeToByteArray() }
+private val aesIv by lazy { Configure.aesIv.encodeToByteArray() }
 
 /**
  * encrypt

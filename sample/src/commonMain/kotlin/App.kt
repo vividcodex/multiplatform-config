@@ -5,15 +5,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import cn.vividcode.multiplatform.config.api.config
+import cn.vividcode.multiplatform.config.api.configure
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
 @Preview
 fun App() {
-	config {
-		this.appName = "ConfigSample"
-	}
 	MaterialTheme {
 		val coroutineScope = rememberCoroutineScope()
 		val scaffoldState = rememberScaffoldState()
@@ -122,6 +120,12 @@ fun App() {
 }
 
 object SampleConfig {
+	
+	init {
+		configure {
+			this.appName = "ConfigSample"
+		}
+	}
 	
 	var testString: String by config()
 	

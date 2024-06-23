@@ -14,20 +14,20 @@ class DesktopConfigProperty<T : Comparable<*>>(
 	
 	private companion object {
 		
-		private val configFile by lazy {
-			val appName = if (Config.appName.isNotBlank()) Config.appName else error("appName 为空")
+		private val configureFile by lazy {
+			val appName = if (Configure.appName.isNotBlank()) Configure.appName else error("appName 为空")
 			val parent = System.getProperty("user.home") + "/Documents/${appName}Files/Config"
-			File(parent, Config.configFileName + ".xml")
+			File(parent, Configure.configFileName + ".xml")
 		}
 		
 		private val properties by lazy {
 			Properties().apply {
-				if (configFile.exists()) {
-					configFile.inputStream().use {
+				if (configureFile.exists()) {
+					configureFile.inputStream().use {
 						loadFromXML(it)
 					}
 				} else {
-					configFile.apply {
+					configureFile.apply {
 						if (!parentFile.exists()) {
 							parentFile.mkdirs()
 						}
@@ -44,7 +44,7 @@ class DesktopConfigProperty<T : Comparable<*>>(
 	
 	override fun setValue(key: String, value: String) {
 		properties.setProperty(key, value)
-		configFile.outputStream().use {
+		configureFile.outputStream().use {
 			properties.storeToXML(it, null)
 		}
 	}

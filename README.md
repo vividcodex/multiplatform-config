@@ -15,7 +15,7 @@ cn.vividcode.multiplatform:config-api:1.0.1
 // 在启动的时候配置config的配置项，此配置项不会重复执行
 @Composable
 fun App() { 
-    config {
+    configure {
         this.appName = "<必填项>"
         this.aesKey = "<请替换成自己的aesKey，随机的字符串>"
         this.aesIv = "<请替换成自己的aesIv，随机的字符串>"

@@ -23,9 +23,7 @@ class DesktopConfigProperty<T : Comparable<*>>(
 		private val properties by lazy {
 			Properties().apply {
 				if (configureFile.exists()) {
-					configureFile.inputStream().use {
-						loadFromXML(it)
-					}
+					configureFile.inputStream().use(::loadFromXML)
 				} else {
 					configureFile.apply {
 						if (!parentFile.exists()) {
